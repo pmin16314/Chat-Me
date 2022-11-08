@@ -23,37 +23,55 @@ const SignUp = () => {
             Sign Up
           </p>
         </div>
+        {/* form section */}
         <form>
+          {/* form section : Name*/}
           <div class="form-group mb-6">
             <label class="form-label font-semibold inline-block mb-1 text-gray-700">
               Name :
             </label>
             <input
+              required
               type="text"
               class="form-control w-[400px] block px-3 py-1.5 text-[14px] font-normal text-gray-700 bg-white bg-clip-padding  border-b-[1px] border-gray-300 transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-secondarGreen focus:outline-none"
               placeholder="Enter Name"
             />
           </div>
+          {/* form section : Email*/}
           <div class="form-group mb-6">
             <label class="form-label font-semibold inline-block mb-1 text-gray-700">
               Email address :
             </label>
             <input
+              required
               type="email"
               class="form-control w-[400px] block px-3 py-1.5 text-[14px] font-normal text-gray-700 bg-white bg-clip-padding  border-b-[1px] border-gray-300 transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-secondarGreen focus:outline-none"
               placeholder="Enter email"
             />
           </div>
+          {/* form section : Password*/}
           <div class="form-group mb-6">
             <label class="form-label font-semibold inline-block mb-1 text-gray-700">
               Password :
             </label>
             <input
+              required
               type="password"
               class="form-control w-[400px] block px-3 py-1.5 text-[14px] font-normal text-gray-700 bg-white bg-clip-padding border-b-[1px] border-gray-300 transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-secondarGreen focus:outline-none"
               placeholder="Password"
             />
           </div>
+          {/* form section : Avatar*/}
+          <div class="form-group mb-6 ">
+            <input required type="file" style={{ display: "none" }} id="file" />
+            <label
+              htmlFor="file"
+              className="flex flex-row items-center space-x-3">
+              <img src={`images/add_avatar.png`} className="w-[30px]" alt="" />
+              <span>Add an avatar</span>
+            </label>
+          </div>
+          {/* form section : Submit Button*/}
           <button
             type="submit"
             class="px-6 py-2.5 mt-2  bg-secondarGreen text-white font-medium text-base leading-tight uppercase rounded shadow-md hover:bg-primaryGreen hover:shadow-lg focus:bg-primaryGreen focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primaryGreen active:shadow-lg transition duration-150 ease-in-out">
