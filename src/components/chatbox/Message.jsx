@@ -1,7 +1,6 @@
 import React from "react";
 
 const message = ({ owner }) => {
-  console.log(owner);
   return (
     <div
       className={`flex space-y-2 ${owner === "A" ? "flex-row-reverse" : ""}`}>

@@ -1,4 +1,6 @@
 import React from "react";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase";
 
 const Profile = () => {
   return (
@@ -11,7 +13,12 @@ const Profile = () => {
         />
         <span className="pl-2 text-white font-medium">Jane</span>
       </div>
-      <button className="flex flex-row justify-between w-[110px] items-center  p-[10px] rounded-[10px] text-white font-medium hover:bg-secondarGreenHover">
+      <button
+        onClick={() => {
+          signOut(auth);
+          console.log("asas");
+        }}
+        className="flex flex-row justify-between w-[110px] items-center  p-[10px] rounded-[10px] text-white font-medium hover:bg-secondarGreenHover">
         Log Out
         <img src={"images/logoutIcon.png"} alt="logout" className="w-[20px]" />
       </button>
