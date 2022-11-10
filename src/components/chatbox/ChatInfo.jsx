@@ -8,6 +8,7 @@ const ChatInfo = () => {
       <img
         src="https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         className="w-[50px] h-[50px] rounded-[50%] object-cover border-2 border-emerald-50"
+        alt="profile"
       />
       <p>Jane</p>
     </div>

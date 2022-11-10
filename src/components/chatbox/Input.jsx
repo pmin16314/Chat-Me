@@ -16,7 +16,7 @@ const Input = () => {
         />
         <input type="file" style={{ display: "none" }} id="file" />
         <label htmlFor="file">
-          <img src="images/image_FILL0.png" alt="image" className="h-[30px]" />
+          <img src="images/image_FILL0.png" alt="image2" className="h-[30px]" />
         </label>
         <button className="p-2 w-[60px] flex justify-center items-center bg-secondarGreen hover:bg-secondarGreenHover rounded-[10px]">
           <img src="images/send.png" alt="send" className="h-[30px]" />

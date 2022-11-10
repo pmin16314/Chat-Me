@@ -3,14 +3,14 @@ import React from "react";
 const Search = () => {
   return (
     <div className="p-2 mx-3 flex flex-col flex-none items-start space-y-2 border-b-[1px] border-secondarGreen">
-      <div class="flex flex-row items-stretch">
-        <span class="flex items-center px-3 py-1.5 text-base text-white font-normal text-center whitespace-nowrap">
+      <div className="flex flex-row items-stretch">
+        <span className="flex items-center px-3 py-1.5 text-base text-white font-normal text-center whitespace-nowrap">
           <svg
             aria-hidden="true"
             focusable="false"
             data-prefix="fas"
             data-icon="search"
-            class="w-4"
+            className="w-4"
             role="img"
             viewBox="0 0 512 512">
             <path
@@ -20,7 +20,7 @@ const Search = () => {
         </span>
         <input
           type="search"
-          class="relative flex-auto min-w-0 block px-3 py-1.5 text-[18px] font-light text-white bg-transparent transition ease-in-out outline-none placeholder:italic placeholder:text-gray-50 placeholder:font-extralight  m-0"
+          className="relative flex-auto min-w-0 block px-3 py-1.5 text-[18px] font-light text-white bg-transparent transition ease-in-out outline-none placeholder:italic placeholder:text-gray-50 placeholder:font-extralight  m-0"
           placeholder="Find a user..."
           aria-label="Search"
         />
@@ -29,6 +29,7 @@ const Search = () => {
         <img
           src="https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           className="w-[50px] h-[50px] rounded-[50%] object-cover"
+          alt="profile"
         />
         <span className="ml-[15px] font-medium text-gray-50 ">Jane</span>
       </div>

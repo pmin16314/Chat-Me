@@ -7,6 +7,7 @@ const Chats = () => {
         <img
           src="https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           className="w-[50px] h-[50px] rounded-[50%] object-cover"
+          alt="dp"
         />
         <div className="flex flex-col items-start ml-[15px]">
           <span className=" font-medium text-[18px] text-gray-50 ">Jane</span>

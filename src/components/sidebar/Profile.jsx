@@ -7,6 +7,7 @@ const Profile = () => {
         <img
           src="https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           className="w-[50px] h-[50px] rounded-[50%] object-cover"
+          alt="profileImg"
         />
         <span className="pl-2 text-white font-medium">Jane</span>
       </div>

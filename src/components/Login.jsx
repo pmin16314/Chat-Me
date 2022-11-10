@@ -24,35 +24,35 @@ const Login = () => {
           </p>
         </div>
         <form>
-          <div class="form-group mb-6">
-            <label class="form-label font-semibold inline-block mb-1 text-gray-700">
+          <div className="form-group mb-6">
+            <label className="form-label font-semibold inline-block mb-1 text-gray-700">
               Email address :
             </label>
             <input
               type="email"
-              class="form-control w-[400px] block px-3 py-1.5 text-[14px] font-normal text-gray-700 bg-white bg-clip-padding  border-b-[1px] border-gray-300 transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-secondarGreen focus:outline-none"
+              className="form-control w-[400px] block px-3 py-1.5 text-[14px] font-normal text-gray-700 bg-white bg-clip-padding  border-b-[1px] border-gray-300 transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-secondarGreen focus:outline-none"
               aria-describedby="emailHelp"
               placeholder="Enter email"
             />
           </div>
-          <div class="form-group mb-6">
-            <label class="form-label font-semibold inline-block mb-1 text-gray-700">
+          <div className="form-group mb-6">
+            <label className="form-label font-semibold inline-block mb-1 text-gray-700">
               Password :
             </label>
             <input
               type="password"
-              class="form-control w-[400px] block px-3 py-1.5 text-[14px] font-normal text-gray-700 bg-white bg-clip-padding border-b-[1px] border-gray-300 transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-secondarGreen focus:outline-none"
+              className="form-control w-[400px] block px-3 py-1.5 text-[14px] font-normal text-gray-700 bg-white bg-clip-padding border-b-[1px] border-gray-300 transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-secondarGreen focus:outline-none"
               placeholder="Password"
             />
           </div>
           <button
             type="submit"
-            class="px-6 py-2.5 mt-2 bg-secondarGreen text-white font-medium text-base leading-tight uppercase rounded shadow-md hover:bg-primaryGreen hover:shadow-lg focus:bg-primaryGreen focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primaryGreen active:shadow-lg transition duration-150 ease-in-out">
+            className="px-6 py-2.5 mt-2 bg-secondarGreen text-white font-medium text-base leading-tight uppercase rounded shadow-md hover:bg-primaryGreen hover:shadow-lg focus:bg-primaryGreen focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primaryGreen active:shadow-lg transition duration-150 ease-in-out">
             Log In
           </button>
-          <p class="text-gray-800 mt-2">
+          <p className="text-gray-800 mt-2">
             Not a member?{" "}
-            <span class="text-secondarGreen hover:text-primaryGreen focus:text-primaryGreen transition duration-200 ease-in-out">
+            <span className="text-secondarGreen hover:text-primaryGreen focus:text-primaryGreen transition duration-200 ease-in-out">
               Register
             </span>
           </p>
