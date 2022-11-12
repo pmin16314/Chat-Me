@@ -76,14 +76,13 @@ const Search = () => {
     }
 
     //
+    setUser(null);
+    setFindUser("");
   };
 
   const handleKey = (key) => {
     key.code === "Enter" && handleSearch();
   };
-
-  setUser(null);
-  setFindUser("");
 
   return (
     <div className="p-2 mx-3 flex flex-col flex-none items-start space-y-2 border-b-[1px] border-secondarGreen">

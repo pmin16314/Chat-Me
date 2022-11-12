@@ -76,7 +76,7 @@ const Login = () => {
           <p className="text-gray-800 mt-2">
             Not a member?{" "}
             <span className="text-secondarGreen hover:text-primaryGreen focus:text-primaryGreen transition duration-200 ease-in-out">
-              <Link to="/register">Register</Link>
+              <Link to="/signup">Register</Link>
             </span>
           </p>
         </form>

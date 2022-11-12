@@ -1,21 +1,58 @@
-import React from "react";
+import { doc, onSnapshot } from "firebase/firestore";
+import React, { useContext, useEffect, useState } from "react";
+import { db } from "../../firebase";
+import { AuthContext } from "../context/AuthContext";
+import { ChatContext } from "../context/ChatContext";
 
 const Chats = () => {
+  const [chats, setChats] = useState([]);
+
+  const { currentUser } = useContext(AuthContext);
+  const { dispatch } = useContext(ChatContext);
+
+  useEffect(() => {
+    const getChatList = () => {
+      const unsub = onSnapshot(doc(db, "userChats", currentUser.uid), (doc) => {
+        setChats(Object.entries(doc.data()));
+      });
+
+      return () => {
+        unsub();
+      };
+    };
+
+    currentUser.uid && getChatList();
+  }, [currentUser.uid]);
+
+  const handleSelect = (user) => {
+    dispatch({ type: "CHANGE_USER", payload: user });
+  };
+
+  console.log(chats);
   return (
     <div className="mx-3 h-[800px]">
-      <div className="p-[10px] mt-3 w-full rounded-[10px] flex flex-row items-center hover:bg-secondarGreen">
-        <img
-          src="https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          className="w-[50px] h-[50px] rounded-[50%] object-cover"
-          alt="dp"
-        />
-        <div className="flex flex-col items-start ml-[15px]">
-          <span className=" font-medium text-[18px] text-gray-50 ">Jane</span>
-          <span className=" font-light text-[14px] text-gray-200 ">
-            Hello... Howare you?
-          </span>
-        </div>
-      </div>
+      {chats
+        ?.sort((a, b) => b[1].date - a[1].date)
+        .map((chat) => (
+          <div
+            key={chat[0]}
+            className="p-[10px] mt-3 w-full rounded-[10px] flex flex-row items-center hover:bg-secondarGreen"
+            onClick={() => handleSelect(chat[1].userInfo)}>
+            <img
+              src={chat[1].userInfo.photoURL}
+              className="w-[50px] h-[50px] rounded-[50%] object-cover"
+              alt="dp"
+            />
+            <div className="flex flex-col items-start ml-[15px]">
+              <span className=" font-medium text-[18px] text-gray-50 ">
+                {chat[1].userInfo.displayName}
+              </span>
+              <span className=" font-light text-[14px] text-gray-200 ">
+                {chat[1].lastMessage?.msg}
+              </span>
+            </div>
+          </div>
+        ))}
     </div>
   );
 };
