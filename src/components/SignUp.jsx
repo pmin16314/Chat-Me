@@ -25,6 +25,7 @@ const SignUp = () => {
       uploadTask.on(
         (error) => {
           // Handle unsuccessful uploads
+          console.log(`Error from Uploading: ${error}`);
           setError(true);
         },
         () => {
@@ -131,6 +132,9 @@ const SignUp = () => {
             <button className="px-6 py-2.5 mt-2  bg-secondarGreen text-white font-medium text-base leading-tight uppercase rounded shadow-md hover:bg-primaryGreen hover:shadow-lg focus:bg-primaryGreen focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primaryGreen active:shadow-lg transition duration-150 ease-in-out">
               Sign Up
             </button>
+            {error && (
+              <span className="ml-2 text-red-700">Something went wrong</span>
+            )}
           </form>
           <p className="text-gray-800 text-[12px] mt-2">
             Not a member?{" "}
