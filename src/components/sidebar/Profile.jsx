@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
+import { AuthContext } from "../context/AuthContext";
 
 const Profile = () => {
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="h-[80px] px-5 py-2 flex items-center flex-none justify-between bg-primaryGreen">
       <div className="flex flex-row py-2 items-center">
         <img
-          src="https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          src={currentUser.photoURL}
           className="w-[50px] h-[50px] rounded-[50%] object-cover"
           alt="profileImg"
         />
-        <span className="pl-2 text-white font-medium">Jane</span>
+        <span className="pl-2 text-white font-medium">
+          {currentUser.displayName}
+        </span>
       </div>
       <button
         onClick={() => {
