@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate, Link } from "react-router-dom";
+import { auth } from "../firebase";
 
 const Login = () => {
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const email = e.target[0].value;
+    const password = e.target[1].value;
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+      setError(true);
+    }
+  };
+
   return (
     <div className="grid grid-cols-2 w-[1200px] relative bg-white rounded-[15px] overflow-hidden drop-shadow-2xl">
       <img
@@ -23,7 +43,7 @@ const Login = () => {
             LogIn
           </p>
         </div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="form-group mb-6">
             <label className="form-label font-semibold inline-block mb-1 text-gray-700">
               Email address :
@@ -50,10 +70,13 @@ const Login = () => {
             className="px-6 py-2.5 mt-2 bg-secondarGreen text-white font-medium text-base leading-tight uppercase rounded shadow-md hover:bg-primaryGreen hover:shadow-lg focus:bg-primaryGreen focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primaryGreen active:shadow-lg transition duration-150 ease-in-out">
             Log In
           </button>
+          {error && (
+            <span className="ml-2 text-red-700">Something went wrong</span>
+          )}
           <p className="text-gray-800 mt-2">
             Not a member?{" "}
             <span className="text-secondarGreen hover:text-primaryGreen focus:text-primaryGreen transition duration-200 ease-in-out">
-              Register
+              <Link to="/register">Register</Link>
             </span>
           </p>
         </form>
