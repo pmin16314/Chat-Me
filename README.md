@@ -8,6 +8,10 @@
 - Firebase
 - Tailwind CSS
 
+## <b>Deployed Site</b>
+
+https://resplendent-pastelito-e07812.netlify.app/
+
 ## <b>Contact</b>
 
 Panchana Madara: [@LinkedIn](www.linkedin.com/in/panchana-madara/) <br>
