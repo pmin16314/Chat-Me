@@ -49,7 +49,6 @@ const Search = () => {
 
       if (!res.exists()) {
         //create a chat in chats collection
-        console.log("ll");
         await setDoc(doc(db, "chats", combinedUserIds), { messages: [] });
 
         //create user chat
@@ -62,7 +61,7 @@ const Search = () => {
           },
           [combinedUserIds + ".dateAndTime"]: serverTimestamp(),
         });
-        await updateDoc(doc(db, "userChats", user.id), {
+        await updateDoc(doc(db, "userChats", user.uid), {
           [combinedUserIds + ".userInfo"]: {
             uid: currentUser.uid,
             displayName: currentUser.displayName,

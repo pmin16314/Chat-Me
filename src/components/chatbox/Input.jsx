@@ -21,16 +21,11 @@ const Input = () => {
 
   const handleSend = async () => {
     if (img) {
-      const storageRef = ref(storage, uuid());
-      const uploadTask = uploadBytesResumable(storageRef, img);
+      const storageRef = ref(storage, `chatPhotos/${uuid()}`);
 
-      uploadTask.on(
-        (error) => {
-          // Handle unsuccessful uploads
-          console.log(`Error from Uploading: ${error}`);
-        },
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+      await uploadBytesResumable(storageRef, img).then(() => {
+        getDownloadURL(storageRef).then(async (downloadURL) => {
+          try {
             await updateDoc(doc(db, "chats", data.chatId), {
               messages: arrayUnion({
                 id: uuid(),
@@ -40,9 +35,9 @@ const Input = () => {
                 img: downloadURL,
               }),
             });
-          });
-        }
-      );
+          } catch (err) {}
+        });
+      });
     } else {
       await updateDoc(doc(db, "chats", data.chatId), {
         messages: arrayUnion({
@@ -56,12 +51,12 @@ const Input = () => {
 
     await updateDoc(doc(db, "userChats", currentUser.uid), {
       [data.chatId + ".lastMessage"]: { msg },
-      [data.chatId + ".date"]: serverTimestamp(),
+      [data.chatId + ".dateAndTime"]: serverTimestamp(),
     });
 
     await updateDoc(doc(db, "userChats", data.user.uid), {
       [data.chatId + ".lastMessage"]: { msg },
-      [data.chatId + ".date"]: serverTimestamp(),
+      [data.chatId + ".dateAndTime"]: serverTimestamp(),
     });
 
     setImg(null);
@@ -73,12 +68,12 @@ const Input = () => {
       <input
         type="text"
         placeholder="Type here..."
-        className="w-full border-none outline-none text-[18px]"
+        className="w-full grow  border-none outline-none text-[18px]"
         onChange={(e) => setMsg(e.target.value)}
         value={msg}
       />
-      <div className="flex flex-row items-center space-x-3">
-        {/* <input
+      <div className="flex flex-row flex-none items-center space-x-3">
+        <input
           type="file"
           style={{ display: "none" }}
           id="file"
@@ -86,10 +81,10 @@ const Input = () => {
         />
         <label htmlFor="file">
           <img src="images/image_FILL0.png" alt="image2" className="h-[30px]" />
-        </label> */}
+        </label>
         <button
           onClick={handleSend}
-          className="p-2 w-[60px] flex justify-center items-center bg-secondarGreen hover:bg-secondarGreenHover rounded-[10px]">
+          className="p-2 w-[60px] flex justify-center items-center bg-secondarGreen hover:bg-secondarGreenHover rounded-[10px] transition-colors duration-500 ease-in-out">
           <img src="images/send.png" alt="send" className="h-[30px]" />
         </button>
       </div>

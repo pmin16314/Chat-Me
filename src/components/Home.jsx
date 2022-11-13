@@ -4,7 +4,7 @@ import ChatBox from "./chatbox/ChatBox";
 
 const Home = () => {
   return (
-    <div className="flex flex-row w-4/6 h-4/5 overflow-hidden rounded-[15px] drop-shadow-2xl">
+    <div className="sm:flex sm:flex-row sm:w-4/6 sm:h-4/5 w-full h-full overflow-hidden sm:rounded-[15px] drop-shadow-2xl">
       <SideBar />
       <ChatBox />
     </div>

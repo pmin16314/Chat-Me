@@ -19,7 +19,7 @@ const Chat = () => {
   }, [data.chatId]);
 
   return (
-    <div className="h-[800px] px-7 py-5 overflow-auto">
+    <div className="sm:h-[800px] grow  px-7 py-5 overflow-auto">
       {messages.map((m) => (
         <Message message={m} key={m.id} />
       ))}

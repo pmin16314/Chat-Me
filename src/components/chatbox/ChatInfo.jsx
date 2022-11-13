@@ -3,10 +3,9 @@ import { ChatContext } from "../context/ChatContext";
 
 const ChatInfo = () => {
   const { data } = useContext(ChatContext);
-
-  console.log(data);
   return (
-    <>
+    <div className="flex flex-row">
+      <div></div>
       {data.chatID === "null" ? (
         <></>
       ) : (
@@ -21,7 +20,7 @@ const ChatInfo = () => {
           <p className="font-medium">{data.user?.displayName}</p>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

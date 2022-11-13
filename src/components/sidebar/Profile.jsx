@@ -21,9 +21,8 @@ const Profile = () => {
       <button
         onClick={() => {
           signOut(auth);
-          console.log("asas");
         }}
-        className="flex flex-row justify-between w-[110px] items-center  p-[10px] rounded-[10px] text-white font-medium hover:bg-secondarGreenHover">
+        className="flex flex-row justify-between w-[110px] items-center  p-[10px] rounded-[10px] text-white font-medium hover:bg-secondarGreenHover transition-colors duration-500 ease-in-out">
         Log Out
         <img src={"images/logoutIcon.png"} alt="logout" className="w-[20px]" />
       </button>
