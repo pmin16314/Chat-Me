@@ -3,6 +3,7 @@ import { close, menu } from "../../assets";
 import Chats from "./Chats";
 import Profile from "./Profile";
 import Search from "./Search";
+import { logo_white } from "../../assets";
 
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
@@ -19,17 +20,13 @@ const NavBar = () => {
         <div
           className={`${
             toggle ? "flex" : "hidden"
-          } absolute bg-secondarGreenHover flex flex-col h-[500px] top-[80px] left-0 transform duration-500`}>
+          } absolute bg-secondarGreenHover flex flex-col h-[500px] w-full top-[80px] left-0 transform duration-500`}>
           <Search />
           <Chats />
           <Profile />
         </div>
       </div>
-      <img
-        alt="logo"
-        src={"images/logo_white.png"}
-        className="w-[150px] ml-[20px]"
-      />
+      <img alt="logo" src={logo_white} className="w-[150px] ml-[20px]" />
     </div>
   );
 };

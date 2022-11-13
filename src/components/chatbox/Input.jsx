@@ -11,6 +11,7 @@ import { AuthContext } from "../context/AuthContext";
 import { ChatContext } from "../context/ChatContext";
 import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import { image_FILL0, send } from "../../assets";
 
 const Input = () => {
   const { currentUser } = useContext(AuthContext);
@@ -80,12 +81,12 @@ const Input = () => {
           onChange={(e) => setImg(e.target.value[0])}
         />
         <label htmlFor="file">
-          <img src="images/image_FILL0.png" alt="image2" className="h-[30px]" />
+          <img src={image_FILL0} alt="image2" className="h-[30px]" />
         </label>
         <button
           onClick={handleSend}
           className="p-2 w-[60px] flex justify-center items-center bg-secondarGreen hover:bg-secondarGreenHover rounded-[10px] transition-colors duration-500 ease-in-out">
-          <img src="images/send.png" alt="send" className="h-[30px]" />
+          <img src={send} alt="send" className="h-[30px]" />
         </button>
       </div>
     </div>

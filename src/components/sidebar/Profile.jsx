@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
 import { AuthContext } from "../context/AuthContext";
+import { logoutIcon } from "../../assets";
 
 const Profile = () => {
   const { currentUser } = useContext(AuthContext);
@@ -24,7 +25,7 @@ const Profile = () => {
         }}
         className="flex flex-row justify-between w-[110px] items-center  p-[10px] rounded-[10px] text-white font-medium hover:bg-secondarGreenHover transition-colors duration-500 ease-in-out">
         Log Out
-        <img src={"images/logoutIcon.png"} alt="logout" className="w-[20px]" />
+        <img src={logoutIcon} alt="logout" className="w-[20px]" />
       </button>
     </div>
   );

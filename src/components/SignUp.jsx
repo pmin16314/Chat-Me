@@ -3,7 +3,8 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, storage, db } from "../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { add_avatar, loginImg, logo_white } from "../assets";
 
 const SignUp = () => {
   const [error, setError] = useState(false);
@@ -61,12 +62,12 @@ const SignUp = () => {
     <div className="grid sm:grid-cols-2 grid-cols-1 sm:w-[1200px] w-full sm:h-fit h-full relative bg-white sm:rounded-[15px] overflow-hidden drop-shadow-2xl">
       <img
         alt="signUpImg"
-        src={`images/loginImg.png`}
+        src={loginImg}
         className="w-full sm:w-[600px] sm:h-full h-[200px] object-cover"
       />
       <img
         alt="logo"
-        src={"images/logo_white.png"}
+        src={logo_white}
         className="w-[250px] sm:w-[200px] absolute sm:top-[30px] top-[40px] sm:left-[20px] left-[30px]"
       />
       <div className="sm:p-[50px] p-[30px] sm:mb-0 mb-[150px] flex flex-col justify-between">
@@ -121,11 +122,7 @@ const SignUp = () => {
               <label
                 htmlFor="file"
                 className="flex flex-row items-center space-x-3">
-                <img
-                  src={`images/add_avatar.png`}
-                  className="w-[30px]"
-                  alt=""
-                />
+                <img src={add_avatar} className="w-[30px]" alt="" />
                 <span>Add an avatar</span>
               </label>
             </div>
@@ -158,7 +155,7 @@ const SignUp = () => {
           <p className="text-gray-800 text-[12px] mt-2">
             Not a member?{" "}
             <span className="text-secondarGreen hover:text-primaryGreen focus:text-primaryGreen transition duration-200 ease-in-out">
-              Register
+              <Link to="/login">LogIn</Link>
             </span>
           </p>
         </div>

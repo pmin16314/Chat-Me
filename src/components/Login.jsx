@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate, Link } from "react-router-dom";
 import { auth } from "../firebase";
+import { loginImg, logo_white } from "../assets";
 
 const Login = () => {
   const [error, setError] = useState(false);
@@ -28,12 +29,12 @@ const Login = () => {
     <div className="grid sm:grid-cols-2 grid-cols-1 sm:w-[1200px] w-full sm:h-fit h-full relative bg-white sm:rounded-[15px] overflow-hidden drop-shadow-2xl">
       <img
         alt="logingImg"
-        src={`images/loginImg.png`}
+        src={loginImg}
         className="w-full sm:w-[600px] sm:h-full h-[200px] object-cover"
       />
       <img
         alt="logo"
-        src={"images/logo_white.png"}
+        src={logo_white}
         className="w-[250px] sm:w-[200px] absolute sm:top-[30px] top-[40px] sm:left-[20px] left-[30px]"
       />
       <div className="sm:p-[50px] p-[30px] sm:mb-0 mb-[150px] flex flex-col justify-between">
