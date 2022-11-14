@@ -24,7 +24,7 @@ const Input = () => {
     if (img) {
       const storageRef = ref(storage, `chatPhotos/${uuid()}`);
 
-      await uploadBytesResumable(storageRef, img).then(() => {
+      uploadBytesResumable(storageRef, img).then(() => {
         getDownloadURL(storageRef).then(async (downloadURL) => {
           try {
             await updateDoc(doc(db, "chats", data.chatId), {
@@ -39,8 +39,9 @@ const Input = () => {
           } catch (err) {}
         });
       });
-    } else {
-      await updateDoc(doc(db, "chats", data.chatId), {
+    }
+    if (msg !== "") {
+      updateDoc(doc(db, "chats", data.chatId), {
         messages: arrayUnion({
           id: uuid(),
           msg,
@@ -48,14 +49,16 @@ const Input = () => {
           date: Timestamp.now(),
         }),
       });
+    } else {
+      return;
     }
 
-    await updateDoc(doc(db, "userChats", currentUser.uid), {
+    updateDoc(doc(db, "userChats", currentUser.uid), {
       [data.chatId + ".lastMessage"]: { msg },
       [data.chatId + ".dateAndTime"]: serverTimestamp(),
     });
 
-    await updateDoc(doc(db, "userChats", data.user.uid), {
+    updateDoc(doc(db, "userChats", data.user.uid), {
       [data.chatId + ".lastMessage"]: { msg },
       [data.chatId + ".dateAndTime"]: serverTimestamp(),
     });
@@ -77,10 +80,10 @@ const Input = () => {
         <input
           type="file"
           style={{ display: "none" }}
-          id="file"
-          onChange={(e) => setImg(e.target.value[0])}
+          id="image"
+          onChange={(e) => setImg(e.target.files[0])}
         />
-        <label htmlFor="file">
+        <label htmlFor="image">
           <img src={image_FILL0} alt="image2" className="h-[30px]" />
         </label>
         <button
