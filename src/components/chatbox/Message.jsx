@@ -6,8 +6,6 @@ const Message = ({ message }) => {
   const { currentUser } = useContext(AuthContext);
   const ref = useRef();
 
-  console.log(message.date.toDate());
-
   useEffect(() => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   }, [message]);
