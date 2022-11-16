@@ -4,7 +4,7 @@ import { ChatContext } from "../context/ChatContext";
 const ChatInfo = () => {
   const { data } = useContext(ChatContext);
   return (
-    <div className="flex flex-row z-10">
+    <div className="flex flex-row">
       <div></div>
       {data.chatID === "null" ? (
         <></>
