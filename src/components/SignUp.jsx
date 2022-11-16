@@ -9,7 +9,24 @@ import { add_avatar, loginImg, logo_white } from "../assets";
 const SignUp = () => {
   const [error, setError] = useState(false);
   const [isloading, setIsLoading] = useState(false);
+  const [imgPreview, setImgPreview] = useState(null);
+  const [errorImg, setErrorImg] = useState(false);
   const navigate = useNavigate();
+
+  const handleImageChange = (e) => {
+    const selectImage = e.target.files[0];
+    if (selectImage) {
+      console.log("das");
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImgPreview(reader.result);
+      };
+      reader.readAsDataURL(selectImage);
+    } else {
+      setErrorImg(true);
+    }
+  };
+  console.log(imgPreview);
 
   const handleSubmit = async (e) => {
     setIsLoading(true);
@@ -59,7 +76,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="grid sm:grid-cols-2 grid-cols-1 sm:w-[1200px] w-full sm:h-fit h-full relative bg-white sm:rounded-[15px] overflow-hidden drop-shadow-2xl sm:mx-3 mx-0">
+    <div className="grid sm:grid-cols-2 grid-cols-1 sm:w-[1200px] w-full sm:max-h-[650px] h-full relative bg-white sm:rounded-[15px] overflow-hidden drop-shadow-2xl sm:mx-3 mx-0">
       <img
         alt="signUpImg"
         src={loginImg}
@@ -117,14 +134,28 @@ const SignUp = () => {
               />
             </div>
             {/* form section : Avatar*/}
-            <div className="mb-6 ">
-              <input type="file" style={{ display: "none" }} id="file" />
+            <div className="mb-6 flex flex-row items-center">
+              <input
+                type="file"
+                style={{ display: "none" }}
+                id="file"
+                onChange={handleImageChange}
+                accept=".png, .jpg, .jpeg"
+              />
               <label
                 htmlFor="file"
                 className="flex flex-row items-center space-x-3">
-                <img src={add_avatar} className="w-[30px]" alt="" />
-                <span>Add an avatar</span>
+                <span className="rounded-[50%] overflow-hidden bg-blue-50 hover:opacity-80 transition duration-200 ease-in-out cursor-pointer">
+                  <img
+                    src={imgPreview ? imgPreview : add_avatar}
+                    className="w-[70px] h-[70px] object-cover"
+                    alt=""
+                  />
+                </span>
               </label>
+              <span className="ml-3 ">
+                Add an avatar {errorImg && <span> Error</span>}
+              </span>
             </div>
             {/* form section : Submit Button*/}
             <button className="flex flex-row px-6 py-2.5  bg-secondarColor text-white font-medium text-base leading-tight uppercase rounded shadow-md hover:bg-primaryColor hover:shadow-lg focus:bg-primaryColor focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primaryColor active:shadow-lg transition duration-150 ease-in-out">

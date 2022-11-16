@@ -22,7 +22,7 @@ const Message = ({ message }) => {
         } max-w-[80%] space-y-[5px]`}>
         {message.msg !== "" && (
           <p
-            className={`p-3 text-[18px] rounded-[15px] max-w-max ${
+            className={`p-3 sm:text-[18px] text-[14px] rounded-[15px] max-w-max ${
               message.senderId === currentUser.uid
                 ? "text-secondarColorHover bg-primaryColor rounded-tr-[0px] "
                 : "bg-secondarColorHover text-primaryColor rounded-tl-[0px]"
@@ -34,7 +34,7 @@ const Message = ({ message }) => {
         {message.img && (
           <img src={message.img} className="w-[50%] rounded-[15px]" alt="" />
         )}
-        <span className=" text-gray-400 text-[14px] transp">
+        <span className=" text-gray-400 sm:text-[14px] text-[10px] transp">
           {" "}
           {moment(message.date.toDate()).format("L LT")}
         </span>

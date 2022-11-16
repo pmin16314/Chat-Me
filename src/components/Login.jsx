@@ -26,7 +26,7 @@ const Login = () => {
   };
 
   return (
-    <div className="grid sm:grid-cols-2 grid-cols-1 sm:w-[1200px] w-full sm:h-fit h-full relative bg-white sm:rounded-[15px] overflow-hidden drop-shadow-2xl">
+    <div className="grid sm:grid-cols-2 grid-cols-1 sm:w-[1200px] w-full sm:max-h-[650px] h-full relative bg-white sm:rounded-[15px] overflow-hidden drop-shadow-2xl">
       <img
         alt="logingImg"
         src={loginImg}
