@@ -11,7 +11,7 @@ const ChatInfo = () => {
       ) : (
         <div
           id="chatInfo"
-          className="h-[80px] w-full pl-[30px] font-semibold text-[30px] flex items-center flex-none space-x-4 text-white tracking-wider bg-primaryColor shadow-lg">
+          className="h-[80px] w-full sm:pl-[30px] pl-[20px] font-semibold text-[30px] flex items-center flex-none space-x-4 text-white tracking-wider bg-primaryColor shadow-lg">
           <img
             src={data.user?.photoURL}
             className="w-[50px] h-[50px] rounded-[50%] object-cover"
