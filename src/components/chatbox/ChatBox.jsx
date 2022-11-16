@@ -9,12 +9,25 @@ const ChatBox = () => {
   const { data } = useContext(ChatContext);
   console.log(data.chatId);
   return (
-    <div className="basis-2/3 h-full bg-[#dcf8e6] flex flex-col">
-      <div className="sm:hidden">{/* <NavBar /> */}</div>
-      {/* <ChatInfo />
-      <Chat />
-      <Input /> */}
-    </div>
+    <>
+      <div className="sm:hidden">
+        <NavBar />
+      </div>
+      {data.chatId === "null" && (
+        <div className="basis-2/3 h-full bg-white flex items-center justify-center">
+          <div className="font-medium text-secondarColor text-[40px] text-center">
+            Click a chat to start conversation
+          </div>
+        </div>
+      )}
+      {data.chatId !== "null" && (
+        <div className="basis-2/3 h-full bg-white flex flex-col">
+          <ChatInfo />
+          <Chat />
+          <Input />
+        </div>
+      )}
+    </>
   );
 };
 

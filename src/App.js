@@ -17,7 +17,7 @@ function App() {
   };
 
   return (
-    <div className="h-[100vh] flex justify-center items-center font-poppins bg-gradient-to-r from-primaryGreen to-secondarGreen">
+    <div className="h-[100vh] flex justify-center items-center font-poppins bg-gradient-to-r from-primaryColor to-secondarColor">
       <Routes>
         <Route path="/">
           <Route

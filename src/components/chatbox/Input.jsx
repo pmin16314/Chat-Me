@@ -68,11 +68,11 @@ const Input = () => {
   };
 
   return (
-    <div className="bg-white h-[80px] flex flex-none flex-row items-center px-[20px]">
+    <div className=" bg-secondarColorHover h-[80px] flex flex-none flex-row items-center px-[20px]">
       <input
         type="text"
         placeholder="Type here..."
-        className="w-full grow  border-none outline-none text-[18px]"
+        className="w-full grow  border-none outline-none text-[18px] bg-transparent"
         onChange={(e) => setMsg(e.target.value)}
         value={msg}
       />
@@ -88,7 +88,7 @@ const Input = () => {
         </label>
         <button
           onClick={handleSend}
-          className="p-2 w-[60px] flex justify-center items-center bg-secondarGreen hover:bg-secondarGreenHover rounded-[10px] transition-colors duration-500 ease-in-out">
+          className="p-2 w-[60px] flex justify-center items-center bg-primaryColor hover:bg-secondarColor rounded-[10px] transition-colors duration-500 ease-in-out">
           <img src={send} alt="send" className="h-[30px]" />
         </button>
       </div>

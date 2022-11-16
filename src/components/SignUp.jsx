@@ -59,7 +59,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="grid sm:grid-cols-2 grid-cols-1 sm:w-[1200px] w-full sm:h-fit h-full relative bg-white sm:rounded-[15px] overflow-hidden drop-shadow-2xl">
+    <div className="grid sm:grid-cols-2 grid-cols-1 sm:w-[1200px] w-full sm:h-fit h-full relative bg-white sm:rounded-[15px] overflow-hidden drop-shadow-2xl sm:mx-3 mx-0">
       <img
         alt="signUpImg"
         src={loginImg}
@@ -72,10 +72,10 @@ const SignUp = () => {
       />
       <div className="sm:p-[50px] p-[30px] sm:mb-0 mb-[150px] flex flex-col justify-between">
         <div>
-          <h1 className="font-semibold text-primaryGreen text-[15px]">
+          <h1 className="font-semibold text-primaryColor text-[15px]">
             Welcome !
           </h1>
-          <p className="font-bold text-secondarGreen text-[60px] leading-none sm:mb-2 mb-[30px]">
+          <p className="font-bold text-secondarColor text-[60px] leading-none sm:mb-2 mb-[30px]">
             {" "}
             Sign Up
           </p>
@@ -85,34 +85,34 @@ const SignUp = () => {
           <form onSubmit={handleSubmit}>
             {/* form section : Name*/}
             <div className="mb-6">
-              <label className="font-semibold inline-block mb-1 text-gray-700">
+              <label className="font-semibold inline-block mb-1 text-textColor">
                 Name :
               </label>
               <input
                 type="text"
-                className="w-full block px-3 py-1.5 text-[14px] font-normal text-gray-700 bg-white bg-clip-padding  border-b-[1px] border-gray-300 transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-secondarGreen focus:outline-none"
+                className="w-full block px-3 py-1.5 text-[14px] font-normal text-textColor bg-white bg-clip-padding  border-b-[1px] border-gray-300 transition ease-in-out focus:text-textColor focus:bg-white focus:border-secondarColor focus:outline-none"
                 placeholder="Enter Name"
               />
             </div>
             {/* form section : Email*/}
             <div className="mb-6">
-              <label className="font-semibold inline-block mb-1 text-gray-700">
+              <label className="font-semibold inline-block mb-1 text-textColor">
                 Email address :
               </label>
               <input
                 type="email"
-                className="w-full block px-3 py-1.5 text-[14px] font-normal text-gray-700 bg-white bg-clip-padding  border-b-[1px] border-gray-300 transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-secondarGreen focus:outline-none"
+                className="w-full block px-3 py-1.5 text-[14px] font-normal text-textColor bg-white bg-clip-padding  border-b-[1px] border-gray-300 transition ease-in-out focus:text-textColor focus:bg-white focus:border-secondarColor focus:outline-none"
                 placeholder="Enter email"
               />
             </div>
             {/* form section : Password*/}
             <div className="mb-6">
-              <label className="font-semibold inline-block mb-1 text-gray-700">
+              <label className="font-semibold inline-block mb-1 text-textColor">
                 Password :
               </label>
               <input
                 type="password"
-                className="w-full block px-3 py-1.5 text-[14px] font-normal text-gray-700 bg-white bg-clip-padding border-b-[1px] border-gray-300 transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-secondarGreen focus:outline-none"
+                className="w-full block px-3 py-1.5 text-[14px] font-normal text-textColor bg-white bg-clip-padding border-b-[1px] border-gray-300 transition ease-in-out focus:text-textColor focus:bg-white focus:border-secondarColor focus:outline-none"
                 placeholder="Password"
               />
             </div>
@@ -127,8 +127,8 @@ const SignUp = () => {
               </label>
             </div>
             {/* form section : Submit Button*/}
-            <button className="flex flex-row px-6 py-2.5  bg-secondarGreen text-white font-medium text-base leading-tight uppercase rounded shadow-md hover:bg-primaryGreen hover:shadow-lg focus:bg-primaryGreen focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primaryGreen active:shadow-lg transition duration-150 ease-in-out">
-              <span className="mr-2">Log In</span>
+            <button className="flex flex-row px-6 py-2.5  bg-secondarColor text-white font-medium text-base leading-tight uppercase rounded shadow-md hover:bg-primaryColor hover:shadow-lg focus:bg-primaryColor focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primaryColor active:shadow-lg transition duration-150 ease-in-out">
+              <span className="mr-2">Sign Up</span>
               <div role="status">
                 {isloading && (
                   <svg
@@ -154,7 +154,7 @@ const SignUp = () => {
           </form>
           <p className="text-gray-800 text-[12px] mt-2">
             Not a member?{" "}
-            <span className="text-secondarGreen hover:text-primaryGreen focus:text-primaryGreen transition duration-200 ease-in-out">
+            <span className="text-primaryColor font-bold hover:text-secondarColor transition duration-200 ease-in-out">
               <Link to="/login">LogIn</Link>
             </span>
           </p>

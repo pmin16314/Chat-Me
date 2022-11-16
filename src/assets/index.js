@@ -1,11 +1,12 @@
 import close from "./close.svg";
 import menu from "./menu.svg";
-import send from "./send.png";
-import add_avatar from "./add_avatar.png";
+import send from "./send.svg";
+import add_avatar from "./add_avatar.svg";
 import attach_file from "./attach_file.png";
-import image_FILL0 from "./image_FILL0.png";
+import image_FILL0 from "./image_FILL0.svg";
 import loginImg from "./loginImg.png";
 import logo_white from "./logo_white.png";
+import logo_color from "./logo_color.svg";
 import logoutIcon from "./logoutIcon.png";
 
 export {
@@ -17,5 +18,6 @@ export {
   image_FILL0,
   loginImg,
   logo_white,
+  logo_color,
   logoutIcon,
 };
