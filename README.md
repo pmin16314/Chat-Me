@@ -1,6 +1,6 @@
 # <b>Project Details</b>
 
-<p>This is a web application which called ChatME developed using React JS, Firebase and Tailwind CSS.Firebase authentication was used to create the new user accounts. Users can login to their accunts using the email and password. Users can search their friends and start chats with them. All chats are done in realtime. Users can send text as well as images with friends.</p>
+<p>This is a web application which called ChatME developed using React JS, Firebase and Tailwind CSS.Firebase authentication was used to create the new user accounts. Users can login to their accounts using the email and password. Users can search their friends and start chats with them. All chats are done in realtime. Users can send text as well as images with friends. Firestore was used to store the messages and Firebase storage was used to store the images.</p>
 
 ## <b>Built Using</b>
 
