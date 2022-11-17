@@ -91,12 +91,12 @@ const Input = () => {
 
   return (
     <div
-      className=" relative bg-secondarColorHover h-[80px] flex flex-none flex-row items-center px-[20px] z-20"
+      className=" relative bg-secondarColorHover sm:h-[80px] h-[60px] flex flex-none flex-row items-center px-[20px] z-20"
       onKeyDown={handleKey}>
       <input
         type="text"
         placeholder="Type here..."
-        className="w-full grow  border-none outline-none text-[18px] bg-transparent"
+        className="w-full grow  border-none outline-none sm:text-[18px] text-[16px] bg-transparent"
         onChange={(e) => setMsg(e.target.value)}
         value={msg}
       />
@@ -109,16 +109,20 @@ const Input = () => {
           accept=".png, .jpg, .jpeg"
         />
         <label htmlFor="image">
-          <img src={image_FILL0} alt="image2" className="h-[30px]" />
+          <img
+            src={image_FILL0}
+            alt="image2"
+            className="sm:h-[30px] h-[25px]"
+          />
         </label>
         <button
           onClick={handleSend}
-          className="p-2 w-[60px] flex justify-center items-center bg-primaryColor hover:bg-secondarColor rounded-[10px] transition-colors duration-500 ease-in-out">
-          <img src={send} alt="send" className="h-[30px]" />
+          className="p-2 sm:w-[60px] w-[40px] flex justify-center items-center bg-primaryColor hover:bg-secondarColor sm:rounded-[10px] rounded-[50%] transition-colors duration-500 ease-in-out">
+          <img src={send} alt="send" className="sm:h-[30px] s" />
         </button>
       </div>
       {imgPreview && (
-        <div className="flex w-[60%] h-fit justify-center rounded-[10px] bg-opacity-70 bg-blue-200 p-5 absolute -top-[130px] left-1/2 origin- transform -translate-x-1/2 -translate-y-1/2 ">
+        <div className="flex sm:w-[60%] w-[80%] h-fit justify-center rounded-[10px] bg-opacity-70 bg-blue-200 p-5 absolute -top-[130px] left-1/2 origin- transform -translate-x-1/2 -translate-y-1/2 ">
           <img src={imgPreview} alt="" className="max-h-[200px]" />
         </div>
       )}

@@ -75,11 +75,11 @@ const SignUp = () => {
   };
 
   return (
-    <div className="grid sm:grid-cols-2 grid-cols-1 sm:w-[1200px] w-full sm:max-h-[650px] h-full relative bg-white sm:rounded-[15px] overflow-hidden drop-shadow-2xl sm:mx-3 mx-0">
+    <div className="grid sm:grid-cols-2 grid-cols-1 sm:w-[1200px] w-full sm:max-h-[650px] h-full relative bg-white sm:rounded-[15px] sm:overflow-hidden overflow-auto drop-shadow-2xl sm:mx-3 mx-0">
       <img
         alt="signUpImg"
         src={loginImg}
-        className="w-full sm:w-[600px] sm:h-full h-[200px] object-cover"
+        className="w-full sm:w-[600px] sm:h-full h-[150px] object-cover"
       />
       <img
         alt="logo"

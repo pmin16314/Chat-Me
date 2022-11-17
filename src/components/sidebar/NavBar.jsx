@@ -23,25 +23,29 @@ const NavBar = () => {
   return (
     <div
       ref={menuRef}
-      className="h-[80px] bg-secondarColor shadow-lg p-2 flex items-center flex-none">
+      className="sm:h-[80px] h-[60px] bg-secondarColor shadow-lg p-2 flex items-center flex-none">
       <div>
         <img
           src={toggle ? close : menu}
           alt=""
-          className="w-6 ml-4 sm:hidden cursor-pointer"
+          className="w-5 ml-4 sm:hidden cursor-pointer"
           onClick={() => setToggle((prev) => !prev)}
         />
 
         <div
           className={`${
             toggle ? "left-0 opacity-1" : "left-[-600px] opacity-0"
-          } absolute bg-secondarColorHover flex flex-col h-[600px] w-full top-[80px]  transform duration-500`}>
+          } absolute bg-secondarColorHover flex flex-col h-[600px] w-full top-[60px]  transform duration-500`}>
           <Search />
           <Chats />
           <Profile />
         </div>
       </div>
-      <img alt="logo" src={logo_white} className="w-[150px] ml-[20px]" />
+      <img
+        alt="logo"
+        src={logo_white}
+        className="sm:w-[150px] w-[130px] ml-[20px]"
+      />
     </div>
   );
 };
