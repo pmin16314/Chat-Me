@@ -123,7 +123,11 @@ const Input = () => {
       </div>
       {imgPreview && (
         <div className="flex sm:w-[60%] w-[80%] h-fit justify-center rounded-[10px] bg-opacity-70 bg-blue-200 p-5 absolute -top-[130px] left-1/2 origin- transform -translate-x-1/2 -translate-y-1/2 ">
-          <img src={imgPreview} alt="" className="max-h-[200px]" />
+          <img
+            src={imgPreview}
+            alt=""
+            className="max-h-[200px] rounded-[10px]"
+          />
         </div>
       )}
     </div>
