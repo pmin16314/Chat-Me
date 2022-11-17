@@ -20,25 +20,21 @@ const Input = () => {
 
   const [msg, setMsg] = useState("");
   const [img, setImg] = useState(null);
-  const [imgPreview, setImgePreview] = useState(null);
+
+  console.log(img);
 
   const handleImageChange = (e) => {
     const selectedImg = e.target.files[0];
-    setImg(selectedImg);
     if (selectedImg) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setImgePreview(reader.result);
+        setImg(reader.result);
       };
       reader.readAsDataURL(selectedImg);
     } else {
       setError(true);
       console.log(error);
     }
-  };
-
-  const handleKey = (key) => {
-    key.code === "Enter" && handleSend();
   };
 
   const handleSend = async () => {
@@ -60,7 +56,8 @@ const Input = () => {
           } catch (err) {}
         });
       });
-    } else if (msg !== "") {
+    }
+    if (msg !== "") {
       updateDoc(doc(db, "chats", data.chatId), {
         messages: arrayUnion({
           id: uuid(),
@@ -84,15 +81,11 @@ const Input = () => {
     });
 
     setImg(null);
-    setImgePreview(null);
     setMsg("");
-    console.log("img");
   };
 
   return (
-    <div
-      className=" relative bg-secondarColorHover h-[80px] flex flex-none flex-row items-center px-[20px] z-20"
-      onKeyDown={handleKey}>
+    <div className=" relative bg-secondarColorHover h-[80px] flex flex-none flex-row items-center px-[20px] z-20">
       <input
         type="text"
         placeholder="Type here..."
@@ -117,9 +110,9 @@ const Input = () => {
           <img src={send} alt="send" className="h-[30px]" />
         </button>
       </div>
-      {imgPreview && (
-        <div className="flex w-[60%] h-fit justify-center rounded-[10px] bg-opacity-70 bg-blue-200 p-5 absolute -top-[130px] left-1/2 origin- transform -translate-x-1/2 -translate-y-1/2 ">
-          <img src={imgPreview} alt="" className="max-h-[200px]" />
+      {img && (
+        <div className=" bg-slate-400 p-5 absolute -top-[100px] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <img src={img} alt="" className="h-[100px]" />
         </div>
       )}
     </div>

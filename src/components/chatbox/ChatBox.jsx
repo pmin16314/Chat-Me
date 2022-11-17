@@ -7,7 +7,6 @@ import Input from "./Input";
 
 const ChatBox = () => {
   const { data } = useContext(ChatContext);
-  console.log(data.chatId);
   return (
     <>
       <div className="sm:hidden z-10">

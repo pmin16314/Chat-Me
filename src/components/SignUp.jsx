@@ -26,7 +26,6 @@ const SignUp = () => {
       setErrorImg(true);
     }
   };
-  console.log(imgPreview);
 
   const handleSubmit = async (e) => {
     setIsLoading(true);
