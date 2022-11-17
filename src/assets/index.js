@@ -8,6 +8,7 @@ import loginImg from "./loginImg.png";
 import logo_white from "./logo_white.png";
 import logo_color from "./logo_color.svg";
 import logoutIcon from "./logoutIcon.png";
+import searchIcon from "./search.svg";
 
 export {
   close,
@@ -20,4 +21,5 @@ export {
   logo_white,
   logo_color,
   logoutIcon,
+  searchIcon,
 };
