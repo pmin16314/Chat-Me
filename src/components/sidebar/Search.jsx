@@ -121,7 +121,7 @@ const Search = () => {
             className="w-[50px] h-[50px] rounded-[50%] object-cover"
             alt="profile"
           />
-          <span className="ml-[15px] font-medium text-gray-50 ">
+          <span className="ml-[15px] font-medium text-primaryColor">
             {user.displayName}
           </span>
         </div>
