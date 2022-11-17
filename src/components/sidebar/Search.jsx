@@ -36,6 +36,8 @@ const Search = () => {
     }
   };
 
+  console.log(user);
+
   const handleClick = async () => {
     //check whether the chat available between two or not. if not create it
     const combinedUserIds =
@@ -115,15 +117,13 @@ const Search = () => {
       {user && (
         <div
           onClick={handleClick}
-          className="p-[10px] w-full rounded-[10px] flex flex-row items-center hover:bg-secondarColor">
+          className="p-[10px] w-full rounded-[10px] flex flex-row items-center  text-primaryColor hover:text-white bg-white hover:bg-secondarColor cursor-pointer transition-all ease-in-out duration-200">
           <img
             src={user.photoURL}
             className="w-[50px] h-[50px] rounded-[50%] object-cover"
             alt="profile"
           />
-          <span className="ml-[15px] font-medium text-primaryColor">
-            {user.displayName}
-          </span>
+          <span className="ml-[15px] font-medium">{user.displayName}</span>
         </div>
       )}
     </div>

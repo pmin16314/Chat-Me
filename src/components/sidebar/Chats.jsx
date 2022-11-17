@@ -28,13 +28,13 @@ const Chats = () => {
     dispatch({ type: "CHANGE_USER", payload: user });
   };
   return (
-    <div className="mx-3 grow ">
+    <div className="mx-3 grow">
       {chats
         ?.sort((a, b) => b[1].dateAndTime - a[1].dateAndTime)
         .map((chat) => (
           <div
             key={chat[0]}
-            className="p-[10px] mt-3 w-full rounded-[10px] flex flex-row items-center bg-primaryColor hover:bg-secondarColor drop-shadow-lg transition-colors duration-500 ease-in-out"
+            className="p-[10px] mt-3 w-full rounded-[10px] flex flex-row items-center cursor-pointer bg-primaryColor hover:bg-secondarColor drop-shadow-lg transition-colors duration-500 ease-in-out"
             onClick={() => handleSelect(chat[1].userInfo)}>
             <img
               src={chat[1].userInfo.photoURL}
