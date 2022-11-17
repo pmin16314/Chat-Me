@@ -6,7 +6,7 @@ import Profile from "./Profile";
 
 const SideBar = () => {
   return (
-    <div className="basis-1/3 bg-secondarGreenHover sm:flex sm:flex-col hidden">
+    <div className="basis-1/3 bg-secondarColorHover sm:flex sm:flex-col hidden">
       <NaveBar />
       <Search />
       <Chats />

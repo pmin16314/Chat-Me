@@ -34,7 +34,7 @@ const Chats = () => {
         .map((chat) => (
           <div
             key={chat[0]}
-            className="p-[10px] mt-3 w-full rounded-[10px] flex flex-row items-center hover:bg-secondarGreen transition-colors duration-500 ease-in-out"
+            className="p-[10px] mt-3 w-full rounded-[10px] flex flex-row items-center bg-primaryColor hover:bg-secondarColor drop-shadow-lg transition-colors duration-500 ease-in-out"
             onClick={() => handleSelect(chat[1].userInfo)}>
             <img
               src={chat[1].userInfo.photoURL}

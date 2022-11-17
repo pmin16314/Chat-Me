@@ -29,8 +29,6 @@ const Search = () => {
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         setUser(doc.data());
-
-        console.log(doc.data());
       });
     } catch (err) {
       setError(true);
@@ -84,9 +82,9 @@ const Search = () => {
   };
 
   return (
-    <div className="p-2 mx-3 flex flex-col flex-none items-start space-y-2 border-b-[1px] border-secondarGreen">
+    <div className="p-2 mx-3 flex flex-col flex-none items-start space-y-2 border-b-[2px] border-primaryColor">
       <div id="search bar" className="flex flex-row items-stretch">
-        <span className="flex items-center px-3 py-1.5 text-base text-white font-normal text-center whitespace-nowrap">
+        <span className="flex flex-none items-center px-3 py-1.5 text-base text-primaryColor font-normal text-center whitespace-nowrap">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -102,7 +100,7 @@ const Search = () => {
         </span>
         <input
           type="search"
-          className="relative flex-auto min-w-0 block px-3 py-1.5 text-[18px] font-light text-white bg-transparent transition ease-in-out outline-none placeholder:italic placeholder:text-gray-50 placeholder:font-extralight  m-0"
+          className="relative flex-auto min-w-0 block px-3 py-1.5 text-[18px] font-light text-textColor bg-transparent transition ease-in-out outline-none placeholder:italic placeholder:text-gray-400  placeholder:font-extralight  m-0"
           placeholder="Find a user..."
           onChange={(e) => {
             setFindUser(e.target.value);
@@ -117,7 +115,7 @@ const Search = () => {
       {user && (
         <div
           onClick={handleClick}
-          className="p-[10px] w-full rounded-[10px] flex flex-row items-center hover:bg-secondarGreen">
+          className="p-[10px] w-full rounded-[10px] flex flex-row items-center hover:bg-secondarColor">
           <img
             src={user.photoURL}
             className="w-[50px] h-[50px] rounded-[50%] object-cover"

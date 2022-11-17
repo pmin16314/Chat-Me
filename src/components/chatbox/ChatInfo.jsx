@@ -11,13 +11,15 @@ const ChatInfo = () => {
       ) : (
         <div
           id="chatInfo"
-          className="h-[80px] w-full pl-[30px] font-semibold text-[30px] flex items-center flex-none space-x-4 text-white tracking-wider bg-secondarGreen">
+          className="sm:h-[80px] h-[60px] w-full sm:pl-[30px] pl-[20px] font-semibold text-[30px] flex items-center flex-none space-x-4 text-white tracking-wider bg-primaryColor shadow-lg">
           <img
             src={data.user?.photoURL}
-            className="w-[50px] h-[50px] rounded-[50%] object-cover"
+            className="sm:w-[50px] sm:h-[50px] w-[40px] h-[40px] rounded-[50%] object-cover"
             alt=""
           />
-          <p className="font-medium">{data.user?.displayName}</p>
+          <p className="font-medium sm:text-[30px] text-[24px]">
+            {data.user?.displayName}
+          </p>
         </div>
       )}
     </div>

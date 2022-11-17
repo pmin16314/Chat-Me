@@ -26,11 +26,11 @@ const Login = () => {
   };
 
   return (
-    <div className="grid sm:grid-cols-2 grid-cols-1 sm:w-[1200px] w-full sm:h-fit h-full relative bg-white sm:rounded-[15px] overflow-hidden drop-shadow-2xl">
+    <div className="grid sm:grid-cols-2 grid-cols-1 sm:w-[1200px] w-full sm:max-h-[650px] h-full relative bg-white sm:rounded-[15px] sm:overflow-hidden overflow-auto drop-shadow-2xl">
       <img
         alt="logingImg"
         src={loginImg}
-        className="w-full sm:w-[600px] sm:h-full h-[200px] object-cover"
+        className="w-full sm:w-[600px] sm:h-full h-[150px] object-cover"
       />
       <img
         alt="logo"
@@ -39,44 +39,44 @@ const Login = () => {
       />
       <div className="sm:p-[50px] p-[30px] sm:mb-0 mb-[150px] flex flex-col justify-between">
         <div>
-          <h1 className="font-semibold text-primaryGreen text-[15px]">
+          <h1 className="font-semibold text-primaryColor text-[15px]">
             Welcome Back!
           </h1>
-          <p className="font-bold text-secondarGreen text-[60px] leading-none sm:mb-2 mb-[50px]">
+          <p className="font-bold text-secondarColor text-[60px] leading-none sm:mb-2 mb-[50px]">
             {" "}
             LogIn
           </p>
         </div>
         <form onSubmit={handleSubmit}>
           <div className="form-group mb-6">
-            <label className="form-label font-semibold inline-block mb-1 text-gray-700">
+            <label className="form-label font-semibold inline-block mb-1 text-textColor">
               Email address :
             </label>
             <input
               type="email"
-              className="form-control w-full block px-3 py-1.5 text-[14px] font-normal text-gray-700 bg-white bg-clip-padding  border-b-[1px] border-gray-300 transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-secondarGreen focus:outline-none"
+              className="form-control w-full block px-3 py-1.5 text-[14px] font-normal text-textColor bg-white bg-clip-padding  border-b-[1px] border-gray-300 transition ease-in-out focus:text-textColor focus:bg-white focus:border-secondarColor focus:outline-none"
               aria-describedby="emailHelp"
               placeholder="Enter email"
             />
           </div>
           <div className="form-group mb-6">
-            <label className="form-label font-semibold inline-block mb-1 text-gray-700">
+            <label className="form-label font-semibold inline-block mb-1 text-textColor">
               Password :
             </label>
             <input
               type="password"
-              className="form-control w-full block px-3 py-1.5 text-[14px] font-normal text-gray-700 bg-white bg-clip-padding border-b-[1px] border-gray-300 transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-secondarGreen focus:outline-none"
+              className="form-control w-full block px-3 py-1.5 text-[14px] font-normal text-textColor bg-white bg-clip-padding border-b-[1px] border-gray-300 transition ease-in-out focus:text-textColor focus:bg-white focus:border-secondarColor focus:outline-none"
               placeholder="Password"
             />
           </div>
           <button
             type="submit"
-            className="flex flex-row items-center px-6 py-2.5 mt-2 bg-secondarGreen text-white font-medium text-base leading-tight uppercase rounded shadow-md hover:bg-primaryGreen hover:shadow-lg focus:bg-primaryGreen focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primaryGreen active:shadow-lg transition duration-150 ease-in-out">
+            className="flex flex-row items-center px-6 py-2.5 mt-2 bg-secondarColor text-white font-medium text-base leading-tight uppercase rounded shadow-md hover:bg-primaryColor hover:shadow-lg focus:bg-primaryColor focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primaryColor active:shadow-lg transition duration-150 ease-in-out">
             <span className="mr-2">Log In</span>
             <div role="status">
               {isloading && (
                 <svg
-                  class="inline w-4 h-4 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+                  className="inline w-4 h-4 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
                   viewBox="0 0 100 101"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg">
@@ -95,9 +95,9 @@ const Login = () => {
           {error && (
             <span className="ml-2 text-red-700">Something went wrong</span>
           )}
-          <p className="text-gray-800 mt-2">
+          <p className="text-gray-800 text-[12px] mt-2">
             Not a member?{" "}
-            <span className="text-secondarGreen hover:text-primaryGreen focus:text-primaryGreen transition duration-200 ease-in-out">
+            <span className="font-bold text-secondarColor hover:text-primaryColor focus:text-primaryColor transition duration-200 ease-in-out">
               <Link to="/signup">Register</Link>
             </span>
           </p>
