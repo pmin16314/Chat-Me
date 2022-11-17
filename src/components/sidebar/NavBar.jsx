@@ -34,7 +34,7 @@ const NavBar = () => {
 
         <div
           className={`${
-            toggle ? "left-0 opacity-1" : "left-[-600px] opacity-0"
+            toggle ? "left-0 opacity-1" : "left-[-1600px] opacity-0"
           } absolute bg-secondarColorHover flex flex-col h-[600px] w-full top-[60px]  transform duration-500`}>
           <Search />
           <Chats />
